@@ -19,8 +19,6 @@ nav:
       url: /publications/
     - title: "News"
       url: /news/
-    - title: "Tools"
-      url: /tools/
 
 defaults:
   - scope:
