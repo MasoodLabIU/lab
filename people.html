@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>The Masood Lab | People</title>
     <style>
-        :root { --primary-red: #811218; --white: #ffffff; --light-gray: #f9f9f9; }
+        :root { --primary-red: #811218; --white: #ffffff; --light-gray: #f9f9f9; --card-gray: #e0e0e0; }
         body { margin: 0; font-family: 'Helvetica Neue', Arial, sans-serif; color: #333; background-color: var(--light-gray); }
         header { background-color: var(--primary-red); padding: 1.5rem 5%; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         nav { display: flex; gap: 30px; align-items: center; }
@@ -13,18 +13,20 @@
         .dropdown-content { display: none; position: absolute; right: 0; background: var(--white); min-width: 200px; box-shadow: 0px 8px 16px rgba(0,0,0,0.2); z-index: 1000; }
         .dropdown-content a { color: var(--primary-red); padding: 12px; display: block; text-decoration: none; }
         .dropdown:hover .dropdown-content { display: block; }
-        .container { max-width: 900px; margin: 3rem auto; padding: 3rem; background: var(--white); border-radius: 8px; }
-        h2 { color: var(--primary-red); border-bottom: 2px solid var(--primary-red); padding-bottom: 0.5rem; }
-        .team-grid { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
-        .member { display: flex; align-items: flex-start; gap: 20px; }
-        .member img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--primary-red); flex-shrink: 0; }
-        .member-info h3 { margin: 0 0 5px 0; color: var(--primary-red); }
-        .member-info p { margin: 0; font-size: 0.95rem; }
+        
+        .container { max-width: 1000px; margin: 3rem auto; padding: 2rem; }
+        h2.section-title { text-align: center; color: var(--primary-red); margin-bottom: 3rem; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .member-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; }
+        .member-card { background-color: var(--card-gray); padding: 15px; display: flex; flex-direction: column; }
+        .member-card img { width: 100%; height: 250px; object-fit: cover; margin-bottom: 15px; }
+        .member-card h3 { margin: 0 0 10px 0; font-size: 1.1rem; }
+        .member-card p { margin: 0; font-size: 0.9rem; line-height: 1.3; }
     </style>
 </head>
 <body>
     <header>
-        <a href="index.html"><img src="assets/logo.png" alt="Lab Logo" style="height: 100px;"></a>
+        <a href="index.html"><img src="assets/logo.png" alt="The Masood Lab" style="height: 150px; width: auto; display: block;"></a>
         <nav>
             <div class="dropdown"><a class="dropbtn">Lab ▼</a>
                 <div class="dropdown-content"><a href="index.html">Home</a><a href="people.html">People</a></div>
@@ -36,33 +38,31 @@
     </header>
 
     <div class="container">
-        <h2>Our Team</h2>
-        <div class="team-grid">
-            <!-- PI & Faculty -->
-            <div class="member">
-                <img src="assets/ateeq.png" alt="Ateeq M. Khaliq">
-                <div class="member-info">
-                    <h3>Ateeq M. Khaliq, PhD</h3>
-                    <p><strong>Principal Investigator</strong></p>
-                    <p>Assistant Research Professor of Medicine</p>
-                </div>
-            </div>
-            <div class="member">
+        <h2 class="section-title">Current Lab Members</h2>
+        <div class="member-grid">
+            <!-- Ashiq -->
+            <div class="member-card">
                 <img src="assets/ashiq.png" alt="Ashiq Masood">
-                <div class="member-info">
-                    <h3>Ashiq Masood, MBBS</h3>
-                    <p>Associate Professor of Medicine</p>
-                    <p>Melissa Ann Virts & Kip E. Virts Scholar in Cholangiocarcinoma Research</p>
-                    <p>Adjunct Associate Professor, School of Informatics, Computing and Engineering</p>
-                    <p>Program Leader - Gastroenterology</p>
-                </div>
+                <h3>Ashiq Masood, MBBS</h3>
+                <p><strong>Principal Investigator</strong><br>
+                Associate Professor of Medicine<br>
+                Melissa Ann Virts & Kip E. Virts Scholar in Cholangiocarcinoma Research<br>
+                Adjunct Associate Professor, School of Informatics, Computing and Engineering<br>
+                Program Leader - Gastroenterology</p>
+            </div>
+            <!-- Ateeq -->
+            <div class="member-card">
+                <img src="assets/ateeq.png" alt="Ateeq M. Khaliq">
+                <h3>Ateeq M. Khaliq, PhD</h3>
+                <p><strong>Principal Investigator</strong><br>
+                Assistant Research Professor of Medicine</p>
             </div>
             <!-- Other Members -->
-            <div class="member-info"><h3>Theja Arlagadda</h3></div>
-            <div class="member-info"><h3>Bader El Farran</h3></div>
-            <div class="member-info"><h3>Meenakshi Rajamohan</h3></div>
-            <div class="member-info"><h3>Jetse Rivera-Lopez</h3></div>
-            <div class="member-info"><h3>Bing Song</h3></div>
+            <div class="member-card"><h3>Theja Arlagadda</h3></div>
+            <div class="member-card"><h3>Bader El Farran</h3></div>
+            <div class="member-card"><h3>Meenakshi Rajamohan</h3></div>
+            <div class="member-card"><h3>Jetse Rivera-Lopez</h3></div>
+            <div class="member-card"><h3>Bing Song</h3></div>
         </div>
     </div>
 </body>
